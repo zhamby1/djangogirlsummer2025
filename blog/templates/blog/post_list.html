@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <!--head is for anything that needs to be rendered before the rest of the webpage-->
+    <title>My Webpage</title>
+</head>
+<!--where all the things that are reneder to the page goes-->
+<body>
+    <!--there are tags that do not necessarily render anything..they just break the webpage into sections-->
+    <!--the header tag denotes the heading of a webpage...just dividing into sections-->
+    <header>
+        <!--the h tags are really important in HTML, they denote headings-->
+        <!--the headings are increased in size, but more importantly, allow web bots and other accessability features to understand this is a heading-->
+
+        <!--links are also important..they use the tag a href which means anchor http reference-->
+        <!--we can nest tags so that they can have the characteristics of multiple tags-->
+        <!--aka we can have a h1 element also be a link-->
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </header>
+
+    <!--we can call python code using the percent sign to basically exit out html to run python code-->
+    {% for post in posts %}
+
+        <!--articles are like headers in that they just divide the webpage into another section-->
+        <article>
+            <!--time tag allows us to format time better-->
+            <!--use double brackets we grabbing python data-->
+            <time>published: {{ post.published_date }}</time>
+            <!--each article is like a sub heading of the blog so we can use h2 for this-->
+            <h2><a href=""> {{ post.title }} </a></h2>
+            <!--p tag - it renders a paragraph with text-->
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+        <!--because we are going between html and django/python we have to say when the for loop ends-->
+    {% endfor %}
+
+
+
+    
+    
+</body>
+</html>
