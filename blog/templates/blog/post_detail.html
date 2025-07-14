@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+   
+
+        <!--articles are like headers in that they just divide the webpage into another section-->
+        <article class="post">
+            {% if post.published_date %}
+                <!--time tag allows us to format time better-->
+                <!--use double brackets we grabbing python data-->
+                <time class="date">published: {{ post.published_date }}</time>
+            {% endif %}
+            <!--each article is like a sub heading of the blog so we can use h2 for this-->
+            <h2>{{ post.title }} </a></h2>
+            <h3><small>{{ post.author }}</small></h3>
+            <!--p tag - it renders a paragraph with text-->
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+
+
+{% endblock %}
+      
